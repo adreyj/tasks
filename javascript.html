@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <script language = "JavaScript" type="text/JavaScript">
+        function changeColor() {
+            document.getElementById("text").className= "green";
+        }
+
+        function checkAge(){
+            var age = document.ageForm.age.value;
+            var ageError =  document.getElementById("ageError");
+
+            if(age>65){
+                ageError.textContent = "Too Old";
+            }
+        }
+
+        function multiply(){
+            var num1 = document.calculate.num1.value;
+            var num2 = document.calculate.num2.value;
+
+            document.getElementById("output").innerHTML = num1 * num2;
+        }
+
+        function divide(){
+            var num1 = document.calculate.num1.value;
+            var num2 = document.calculate.num2.value;
+
+            document.getElementById("output").innerHTML = num1 / num2;
+        }
+    </script>
+    <style>
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task 1</h1>
+    <p id="text" >this text will change color from black to green when you press the button.</p>
+    <button onclick="changeColor()">Change Color</button>
+    <hr>
+    <h1>Task 2</h1>
+    <form name="ageForm">
+        <input type="number" name="age" placeholder="Enter your age"/>
+        <input type="button" onclick="checkAge()" value="Check Age"/>
+        <br>
+        <span id="ageError"></span>
+    </form>
+    <hr>
+    <h1>Task 3</h1>
+    <form name="calculate">
+        <input type="number" name="num1" placeholder="Enter num1">
+        <br>
+        <input type="number" name="num2" placeholder="Enter num2">
+        <br>
+        <input type="button" value="Multiply" onclick="multiply()">
+        <input type="button" value="Divide" onclick="divide()">
+    </form>
+    <h2>Output</h2>
+    <p id="output"></p>
+</body>
+</html>
